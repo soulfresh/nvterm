@@ -66,6 +66,7 @@ local set_behavior = function(behavior)
   end
 
   if behavior.auto_insert then
+    print("auto_insert is true!")
     vim.api.nvim_create_autocmd({ "BufEnter" }, {
       callback = function()
         vim.cmd "startinsert"
@@ -79,6 +80,8 @@ local set_behavior = function(behavior)
       end,
       pattern = "term://*",
     })
+  else
+    print('auto_insert is false')
   end
 end
 
