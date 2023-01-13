@@ -125,7 +125,7 @@ nvterm.new = function(type, shell_override)
   local id = #terminals.list + 1
   local term = { id = id, win = win, buf = buf, open = true, type = type, job_id = job_id }
   terminals.list[id] = term
-  vim.cmd "startinsert"
+  -- vim.cmd "startinsert"
   return term
 end
 
