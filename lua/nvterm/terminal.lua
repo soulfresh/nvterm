@@ -88,7 +88,9 @@ nvterm.show_term = function(term)
   term.win = create_term_window(term.type)
   a.nvim_win_set_buf(term.win, term.buf)
   terminals.list[term.id].open = true
-  vim.cmd "startinsert"
+  -- init.lua creates an autocommand to do the "startinsert" based on the
+  -- `auto_insert` config
+  -- vim.cmd "startinsert"
 end
 
 nvterm.get_and_show = function(key, value)
